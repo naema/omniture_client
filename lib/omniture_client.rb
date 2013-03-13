@@ -1,8 +1,10 @@
-require File.dirname(__FILE__) + '/omniture_client/printer'
-require File.dirname(__FILE__) + '/omniture_client/base'
-require File.dirname(__FILE__) + '/omniture_client/var'
-require File.dirname(__FILE__) + '/omniture_client/meta_var'
-require File.dirname(__FILE__) + '/omniture_client/controller_methods'
+require 'omniture_client/printer'
+require 'omniture_client/base'
+require 'omniture_client/var'
+require 'omniture_client/meta_var'
+require 'omniture_client/controller_methods'
+require 'omniture_client/railtie' if defined?(Rails)
+
 require 'cgi'
 
 class BasicReporter < OmnitureClient::Base; end
@@ -19,6 +21,4 @@ module OmnitureClient
   end
 end
 
-if defined?(Rails)
-  require File.dirname(__FILE__) + '/rails' 
-end
+require 'omniture_client/action_controller_methods'
