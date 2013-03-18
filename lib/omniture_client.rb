@@ -3,7 +3,7 @@ require 'omniture_client/base'
 require 'omniture_client/var'
 require 'omniture_client/meta_var'
 require 'omniture_client/controller_methods'
-require 'omniture_client/railtie' if defined?(Rails)
+require 'railtie' if defined?(Rails)
 
 require 'cgi'
 
