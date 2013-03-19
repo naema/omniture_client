@@ -13,7 +13,7 @@ module OmnitureClient
   class << self
     attr_accessor :aliases, :base_url, :ssl_url, :suite, :version
 
-    def config(config_hash)
+    def config(config_hash = {})
       config_hash.each do |key, val|
         send("#{key}=", val)
       end
